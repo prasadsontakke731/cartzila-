@@ -1,0 +1,39 @@
+.nav-item{
+    list-style-type: none;
+}
+ul li .link{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    margin: 10px;
+  
+}
+.navbar{
+    border: 2px solid black;
+}
+/* .navbar-nav{
+    border: 2px solid red;
+    display: flex;
+    width: 80%;
+} */
+.right-nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    
+}
+.nav-item a{
+    margin: 0 40px;
+}
+.logo{
+    letter-spacing: 5px;
+}
+@media screen and (max-width:993px) {
+    .navbar-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}

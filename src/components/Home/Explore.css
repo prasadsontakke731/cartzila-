@@ -1,0 +1,42 @@
+.rest-chain{
+    display: flex;
+    
+   
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 25px;
+}
+.rest-chain li{
+    cursor: pointer;
+    color: rgb(178, 180, 182);
+}
+.rest-chain li:hover{
+    color: black;
+}
+.city-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+.city-list ul li{
+    margin: 30px ;
+    list-style-type: none;
+    cursor: pointer;
+     color: rgb(188, 190, 192);
+}
+.city-list ul li:hover{
+  color: black;
+    
+}
+
+@media screen and (max-width:600px) {
+    .rest-chain{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:936px) {
+    .city-list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

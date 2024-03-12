@@ -1,0 +1,72 @@
+import React from 'react'
+import "./Brands.css"
+import { carouselBrand } from '../../utils/constants'
+const Brands = () => {
+    const sliceCarousalBrands1 = carouselBrand.slice(0, 5)
+    const sliceCarousalBrands2 = carouselBrand.slice(5, 10)
+    const sliceCarousalBrands3 = carouselBrand.slice(10, 15)
+    return (
+        <div id="carouselExampleDark1" className="carousel carousel-dark slide mt-5 w-75 ms-auto me-auto" data-bs-ride="carousel">
+            <h1>Top brands for you</h1>
+
+            <div className="carousel-inner ">
+
+                <div className="carousel-item active" data-bs-interval="10000">
+                    <div className='d-flex justify-content-evenly'>
+                        {
+                            sliceCarousalBrands1.map((item) => {
+                                return (
+
+                                    <div className='brand-name' key={item.id}>
+                                        <div className='img-div'>
+                                            <img src={item.image} className="d-block w-10" alt="food" />
+                                        </div>
+                                        <h6 className='fw-blod bg-danger p-2 pointer-event text-white rounded rounded-4'>{item.type}</h6>
+                                    </div>
+
+                                )
+                            })
+                        }
+
+
+
+                    </div>
+
+                </div>
+                <div className="carousel-item" data-bs-interval="2000">
+                    <div className='d-flex justify-content-evenly'>
+                        {
+                            sliceCarousalBrands2.map((item) => {
+                                return (
+
+                                    <div className='brand-name' key={item.id}>
+                                        <div className='img-div'>
+                                            <img src={item.image} className="d-block w-10" alt="food" />
+                                        </div>
+                                        <h6 className='fw-blod bg-danger p-2 pointer-event text-white rounded rounded-4'>{item.type}</h6>
+                                    </div>
+
+                                )
+                            })
+                        }
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <button className="pre-brand-btn carousel-control-prev " type="button" data-bs-target="#carouselExampleDark1" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+            </button>
+            <button className="nxt-brand-btn carousel-control-next " type="button" data-bs-target="#carouselExampleDark1" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden ">Next</span>
+            </button>
+
+        </div>
+    )
+}
+
+export default Brands

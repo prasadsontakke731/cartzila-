@@ -1,0 +1,74 @@
+body{
+    background-color: rgb(244, 244, 244);
+}
+.carousel-item div img{
+    /* border: 10px solid gray; */
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 10px;
+    
+}
+.img-div{
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: 0.1s ease-in-out;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+}
+
+.carousel{
+    position: relative;
+    padding-top: 10px;
+    background-color: rgb(244, 244, 244);
+ 
+}
+.pre-btn{
+    position: absolute;
+
+   top: 120px;
+    width: 30px;
+    height: 50px;
+   
+}
+.nxt-btn{
+    position: absolute;
+  
+     top: 120px;
+
+    width: 30px;
+    height: 40px;
+   
+}
+
+.food-name{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+
+}
+.food-name img,h6{
+    /* margin-top: 10px; */
+}
+.food-name img:hover{
+transform: scale(1.2);
+}
+
+@media screen and (max-width:1109px) {
+    .carousel-item div{
+    display: flex;
+    flex-wrap: wrap;
+    
+    }
+    .carousel-item div img{
+margin-top: 10px;
+    }
+    
+}

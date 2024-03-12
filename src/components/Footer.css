@@ -1,0 +1,46 @@
+
+.footer-middle{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-middle ul li{
+    list-style-type: none;
+    margin: 10px 0px;
+    font-weight: 100;
+}
+.footer-middle ul .first-li{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+ul li:hover{
+cursor: pointer;
+color: black;
+font-weight: 400;
+}
+li img{
+    mix-blend-mode: darken;
+    background: white;
+}
+.social-icons span{
+    margin: 0px 20px;
+    
+    font-size: 30px;
+    
+}
+.fa-instagram{
+    color: magenta;
+}
+.social-icons span i:hover{
+    transition: all 1s ease-out;
+    transform: scale(1.4);
+}
+@media screen and (max-width:387px) {
+    .footer-middle ul{
+display: flex;
+flex-direction: column;
+/* justify-content: center; */
+align-items: center;
+    }
+    
+}
