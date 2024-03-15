@@ -4,14 +4,14 @@ import { carouselBrand } from '../../utils/constants'
 const Brands = () => {
     const sliceCarousalBrands1 = carouselBrand.slice(0, 5)
     const sliceCarousalBrands2 = carouselBrand.slice(5, 10)
-    const sliceCarousalBrands3 = carouselBrand.slice(10, 15)
+
     return (
         <div id="carouselExampleDark1" className="carousel carousel-dark slide mt-5 w-75 ms-auto me-auto" data-bs-ride="carousel">
-            <h1>Top brands for you</h1>
+            <h5 className='restaurants text-center'>Top brands for you</h5>
 
             <div className="carousel-inner ">
 
-                <div className="carousel-item active" data-bs-interval="10000">
+                <div className="carousel-item active" data-bs-interval="4000">
                     <div className='d-flex justify-content-evenly'>
                         {
                             sliceCarousalBrands1.map((item) => {
@@ -33,7 +33,7 @@ const Brands = () => {
                     </div>
 
                 </div>
-                <div className="carousel-item" data-bs-interval="2000">
+                <div className="carousel-item" data-bs-interval="4000">
                     <div className='d-flex justify-content-evenly'>
                         {
                             sliceCarousalBrands2.map((item) => {

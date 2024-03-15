@@ -6,6 +6,9 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../utils/firebase'
 import { useDispatch, useSelector } from "react-redux"
 import { addUser, removeUser } from '../utils/userSlice'
+import CartPage from './Cart/CartPage'
+import Navbar from './Home/Navbar'
+import RestaurentDetails from './Restaurants/RestaurentDetails'
 
 const Body = () => {
     const dispatch = useDispatch()
@@ -16,9 +19,20 @@ const Body = () => {
             element: <Login />
         },
         {
-            path: "/browse",
+            path: "cartzila",
             element: <Browse />,
+
         },
+        {
+
+            path: "cart",
+            element: <CartPage />
+
+        },
+        {
+            path: "restaurent/:id/:name",
+            element: <RestaurentDetails />
+        }
     ])
 
     //
@@ -40,6 +54,7 @@ const Body = () => {
     }, [])
     return (
         <div>
+
             <RouterProvider router={appRouter} />
         </div>
     )

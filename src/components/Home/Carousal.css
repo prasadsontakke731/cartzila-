@@ -1,6 +1,4 @@
-body{
-    background-color: rgb(244, 244, 244);
-}
+
 .carousel-item div img{
     /* border: 10px solid gray; */
     box-shadow: 5px 5px 10px gray;
@@ -55,8 +53,10 @@ body{
 
 }
 .food-name img,h6{
-    /* margin-top: 10px; */
+   transition: all 1s ease-in-out;
+   cursor: pointer;
 }
+
 .food-name img:hover{
 transform: scale(1.2);
 }

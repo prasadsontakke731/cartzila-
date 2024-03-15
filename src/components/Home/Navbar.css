@@ -1,14 +1,14 @@
 .nav-item{
     list-style-type: none;
 }
-ul li .link{
+/* ul li .link{
     list-style-type: none;
     text-decoration: none;
     color: black;
     border: 1px solid black;
     margin: 10px;
   
-}
+} */
 .navbar{
     border: 2px solid black;
 }
@@ -29,11 +29,31 @@ ul li .link{
 .logo{
     letter-spacing: 5px;
 }
+.navbar-nav{
+    /* border: 1px solid black; */
+    /* text-align: center; */
+    /* align-items: center; */
+
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.navbar-nav .nav-item{
+    margin-top: 10px;
+}
+.nav-item p{
+    cursor: pointer;
+}
 @media screen and (max-width:993px) {
     .navbar-nav{
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
+    .navbar-nav .nav-item{
+    margin-top: 10px;
+}
     
 }

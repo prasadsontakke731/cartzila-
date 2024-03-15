@@ -9,3 +9,10 @@
     justify-content: center;
     align-items: center;
 }
+/* body{
+    background-color: rgb(244, 244, 244);
+} */
+
+.navbars{
+    position: static;
+}

@@ -10,7 +10,7 @@ const Carousal = () => {
     return (
 
         <div id="carouselExampleDark" className="carousel carousel-dark slide mt-5 w-75 ms-auto me-auto" data-bs-ride="carousel">
-            <h1>Inspiration for your first order</h1>
+            <h5 className='restaurants text-center'>Inspiration for your first order</h5>
 
             <div className="carousel-inner ">
 
@@ -36,7 +36,7 @@ const Carousal = () => {
                     </div>
 
                 </div>
-                <div className="carousel-item" data-bs-interval="2000">
+                <div className="carousel-item" data-bs-interval="10000">
                     <div className='d-flex justify-content-evenly'>
                         {
                             sliceCarousalImg2.map((item) => {

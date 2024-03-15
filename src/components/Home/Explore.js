@@ -2,16 +2,16 @@ import React from 'react'
 import "./Explore.css"
 const Explore = () => {
     return (
-        <div>
+        <div className='container my-3'>
             <div className="accordion" id="accordionExample">
-                <h4>Explore options near me</h4>
+                <h5 className='text-center restaurants mb-2'>Explore options near me</h5>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
-                        <button className="accordion-button  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Popular cuisines near me
                         </button>
                     </h2>
-                    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="collapseOne" className="accordion-collapse collapse show " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
                             Beverages food near me. <span>* </span>Biryani food near me. <span>*</span> Burger food near me. <span>*</span>Chinese food near me. <span>*</span>Coffee food near me. <span>*</span>Desserts food near me. <span>*</span>Ice Cream food near me. <span>*</span>Kebab food near me. <span>*</span>Maharashtrian food near me. <span>*</span>Momos food near me. <span>*</span>Mughlai food near me. <span>*</span>North Indian food near me. <span>*</span>Pizza food near me. <span>*</span>Rolls food near me. <span>*</span>Sandwich food near me. <span>*</span>Seafood food near me. <span>*</span>Shake food near me. <span>*</span>Sichuan food near me. <span>*</span>South Indian food near me. <span>*</span>Street food near me
                         </div>
@@ -46,8 +46,8 @@ const Explore = () => {
                                 <li>McDonald's</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
+                    </div >
+                </div >
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
                         <button className="accordion-button collapsed  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -121,8 +121,8 @@ const Explore = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
