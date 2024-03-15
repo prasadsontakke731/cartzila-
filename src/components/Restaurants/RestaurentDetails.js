@@ -36,31 +36,27 @@ const RestaurentDetails = () => {
             </div>
             {/*  */}
             <div className="container mt-5 ">
-                <div className="row border border-4 border-black h-25">
-                    <div className="col-md-6 ">
-                        <img src={data.imgdata} className="restaurant-img img-fluid " alt="Restaurant Image" />
-                    </div>
-                    <div className="col-md-6 d-flex flex-column justify-content-evenly">
-
-                        <h2 className='text-danger fw-bold m-4'>{data.rname}</h2>
-                        <p className='text-danger fw-bold m-4'><strong>Location:</strong> {data.address}</p>
-                        <p className='text-success fw-bold m-4'><strong>Rating:</strong> {data.rating}</p>
-                    </div>
-                </div>
-                {/* <div class="card mb-3 ms-auto me-auto" style={{ maxWidth: "540px" }}>
-                    <div class="row g-0 text-center h-50">
-                        <div class="col-md-8 ">
-                            <img src={data.imgdata} class="img-fluid  rounded-start" alt="..." />
+                <div className="container mt-4">
+                    <div className="row">
+                        <div className="col-md-4 mb-3">
+                            <img src={data.imgdata} className="img-fluid img" alt="Image" />
                         </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <div className="col-md-8">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title  fw-bold bg-success p-1 text-white rounded rounded-5 pointer-event text-center">{data.rname}</h5>
+                                    <p className="card-text mt-3 fw-bold">{data.info}</p>
+                                    <ul className="list-group list-group-flush mt-3">
+                                        <li className="list-group-item">{data.price} <span>Rs.</span></li>
+                                        <li className="list-group-item text-white fw-bold bg-danger">{data.somedata}</li>
+                                        <li className="list-group-item mt-3"><span className='bg-success text-white p-2 rounded rounded-4 '>{data.rating}</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
+
 
                 <div className="row mt-4">
                     {
@@ -71,7 +67,7 @@ const RestaurentDetails = () => {
                                         <img src={item.image} className="card-img-top" alt="Food Item Image" />
                                         <div className="card-body">
                                             <h5 className="card-title">{item.name}</h5>
-                                            <p className="card-text">{item.price}</p>
+                                            <p className="card-text">{item.price} <span>Rs</span></p>
 
 
                                             <button className="btn btn-success" onClick={() => dispatch(addToCart(item))}>Add to Cart</button>

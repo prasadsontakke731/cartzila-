@@ -9,6 +9,8 @@ import { addUser, removeUser } from '../utils/userSlice'
 import CartPage from './Cart/CartPage'
 import Navbar from './Home/Navbar'
 import RestaurentDetails from './Restaurants/RestaurentDetails'
+import Payment from './Payment/Payment'
+import PaymentSuccessFull from './Payment/PaymentSuccessFull'
 
 const Body = () => {
     const dispatch = useDispatch()
@@ -32,6 +34,14 @@ const Body = () => {
         {
             path: "restaurent/:id/:name",
             element: <RestaurentDetails />
+        },
+        {
+            path: "payment",
+            element: <Payment />
+        },
+        {
+            path: "paymentSuccessfull",
+            element: <PaymentSuccessFull />
         }
     ])
 

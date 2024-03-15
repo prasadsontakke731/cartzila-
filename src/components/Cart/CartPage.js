@@ -28,7 +28,7 @@ const CartPage = () => {
                                     <h5 className="mb-0">Cart - {cart.length} items</h5>
                                 </div>
                                 <div className="card-body">
-                                    <h4 onClick={() => navigate("/restaurent/")}>Back To Food</h4>
+
 
                                     {
                                         cart.map((data) => (
@@ -48,8 +48,8 @@ const CartPage = () => {
                                                 <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                                     {/* <!-- Data --> */}
                                                     <p><strong>{data.name}</strong></p>
-                                                    <p className='fw-bold'>price : {data.price}</p>
-
+                                                    <p className='fw-bold'>price : {data.price} <span>Rs.</span></p>
+                                                    <p className=''>{data.info}</p>
                                                     <button type="button" className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
                                                         title="Remove item" onClick={() => dispatch(removeItem(data.id))}>
                                                         <i className="fas fa-trash"></i>
@@ -87,29 +87,7 @@ const CartPage = () => {
 
                                 </div>
                             </div>
-                            <div className="card mb-4">
-                                <div className="card-body">
-                                    <p><strong>Expected shipping delivery</strong></p>
-                                    <p className="mb-0">12.10.2020 - 14.10.2020</p>
-                                </div>
-                            </div>
-                            {/* <div className="card mb-4 mb-lg-0">
-                                <div className="card-body">
-                                    <p><strong>We accept</strong></p>
-                                    <img className="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                                        alt="Visa" />
-                                    <img className="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                                        alt="American Express" />
-                                    <img className="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                                        alt="Mastercard" />
-                                    <img className="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp"
-                                        alt="PayPal acceptance mark" />
-                                </div>
-                            </div> */}
+
                         </div>
                         <div className="col-md-4">
                             <div className="card mb-4">
@@ -136,8 +114,8 @@ const CartPage = () => {
                                         </li>
                                     </ul>
 
-                                    <button type="button" className="btn btn-warning btn-lg btn-block">
-                                        Go to checkout
+                                    <button type="button" className="btn btn-warning btn-lg btn-block fw-bold" onClick={() => navigate("/payment")}>
+                                        Place Order
                                     </button>
                                 </div>
                             </div>
