@@ -1,57 +1,51 @@
 import React from 'react'
+import { useSelector, useDispatch } from "react-redux"
 import "./Footer.css"
 import appSToreImg from "../Assets/appStore.png"
+import lang from '../utils/languageConstants'
 const Footer = () => {
+    const dispatch = useDispatch()
+
+    const langKey = useSelector(store => store.config.lang)
     return (
         <footer className='container-fluid border border-3'>
             <div className='d-flex justify-content-between mt-3 me-5'>
                 <h1 className='text-success ms-5'>C<span className='text-danger fst-italic'>a</span>r<span className='text-primary fst-italic'>t</span>Z<span className='text-danger fst-italic'>il</span>la</h1>
-                {/* <!-- Default dropup button --> */}
-                <div className="btn-group dropup">
-                    <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Language
-                    </button>
-                    <ul className="dropdown-menu">
-                        {/* <!-- Dropdown menu links --> */}
-                        <li><a className="dropdown-item" href="#">Action</a></li>
-                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                        <li><a className="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
+
             </div>
             <div className='footer-middle d-flex justify-content-evenly mt-3'>
                 <ul>
-                    <li className='first-li'>About CartZilla</li>
-                    <li>Who we are</li>
-                    <li>Blog</li>
-                    <li>Work with us</li>
-                    <li>Investors Relations</li>
-                    <li>Report Fruad</li>
-                    <li>Press Kit</li>
-                    <li>Contact Us</li>
+                    <li className='first-li'>{lang[langKey].aboutCartZila}</li>
+                    <li>{lang[langKey].whoWeAre}</li>
+                    <li>{lang[langKey].blog}</li>
+                    <li>{lang[langKey].workWithUs}</li>
+                    <li>{lang[langKey].investorRelation}</li>
+                    <li>{lang[langKey].reportFraud}</li>
+                    <li>{lang[langKey].pressKit}</li>
+                    <li>{lang[langKey].contactUs}</li>
                 </ul>
                 <ul>
-                    <li className='first-li'>CartaVerse</li>
-                    <li>Zomato</li>
-                    <li>Blinkit</li>
-                    <li>Feeding India</li>
-                    <li>Hyperpure</li>
-                    <li>Zomaland</li>
+                    <li className='first-li'>{lang[langKey].cartaVerce}</li>
+
+                    <li>{lang[langKey].blinkit}</li>
+                    <li>{lang[langKey].feedingIndia}</li>
+                    <li>{lang[langKey].Hyperpure}</li>
+                    <li>{lang[langKey].zomaland}</li>
 
                 </ul>
                 <ul>
-                    <li className='first-li'>For Restaurants</li>
-                    <li>Partner With Us</li>
-                    <li>Apps For You</li>
+                    <li className='first-li'>{lang[langKey].forRest}</li>
+                    <li>{lang[langKey].partnerWithUs}</li>
+                    <li>{lang[langKey].appsForYou}</li>
                 </ul>
                 <ul>
-                    <li className='first-li'>Learn More</li>
-                    <li>Privecy</li>
-                    <li>Security</li>
-                    <li>Terms</li>
+                    <li className='first-li'>{lang[langKey].learnMore}</li>
+                    <li>{lang[langKey].privacy}</li>
+                    <li>{lang[langKey].security}</li>
+                    <li>{lang[langKey].terms}</li>
                 </ul>
                 <ul>
-                    <li className='first-li'>Social Links</li>
+                    <li className='first-li'>{lang[langKey].socialLinks}</li>
                     <li>
                         <div className='social-icons'>
                             <span><i className="fa-brands fa-linkedin text-primary"></i></span>

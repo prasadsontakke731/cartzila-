@@ -850,3 +850,24 @@ export const Fooddata = [
         info: "Absolutely divine! Even the various breads we ordered deserve a mention: be it the Amboli, Ghavne, Vade, Chapatis or Bhakris. All were good."
     },
 ];
+
+
+export const SUPPORTED_LANGUAGES = [
+    {
+        identifier: "en",
+        name: "English"
+    },
+    {
+        identifier: "hindi",
+        name: "हिंदी"
+    },
+    {
+        identifier: "marathi",
+        name: "मराठी"
+    },
+    {
+        identifier: "spanish",
+        name: "Spanish"
+    },
+
+]

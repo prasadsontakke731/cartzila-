@@ -11,6 +11,7 @@ import Navbar from './Home/Navbar'
 import RestaurentDetails from './Restaurants/RestaurentDetails'
 import Payment from './Payment/Payment'
 import PaymentSuccessFull from './Payment/PaymentSuccessFull'
+import ScrollToTopOnMount from './ScrollToTopOnMount'
 
 const Body = () => {
     const dispatch = useDispatch()
@@ -40,7 +41,7 @@ const Body = () => {
             element: <Payment />
         },
         {
-            path: "paymentSuccessfull",
+            path: "order-success",
             element: <PaymentSuccessFull />
         }
     ])
@@ -64,7 +65,7 @@ const Body = () => {
     }, [])
     return (
         <div>
-
+            <ScrollToTopOnMount />
             <RouterProvider router={appRouter} />
         </div>
     )

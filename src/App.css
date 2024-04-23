@@ -1,5 +1,10 @@
+body{
+    background-color: rgba(15, 15, 76, 0.64);
+    color: white;
+}
 *{
     margin: 0;
+
     box-sizing: border-box;
 }
 .page{

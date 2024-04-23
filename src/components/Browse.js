@@ -5,14 +5,33 @@ import Brands from './Home/Brands'
 import Footer from './Footer'
 import RestaurentList from './Home/RestaurentList'
 import Explore from './Home/Explore'
+import ScrollToTopOnMount from './ScrollToTopOnMount'
 
 const Browse = () => {
+    const handleClick = () => {
+        const carousalSection = document.getElementById('restList');
+        carousalSection.scrollIntoView({ behavior: 'smooth' });
+        const brandSection = document.getElementById('restList');
+        brandSection.scrollIntoView({ behavior: 'smooth' });
+
+
+    }
+
     return (
-        <div>
+
+        <div style={{ backgroundColor: "rgba(15, 15, 76, 0.64)" }}>
+            <ScrollToTopOnMount />
             <Navbar />
-            <Carousal />
-            <Brands />
-            <RestaurentList />
+            <div id='car' >
+                <Carousal />
+            </div>
+            <div >
+
+                <Brands />
+            </div>
+            <div id='restList' >
+                <RestaurentList />
+            </div>
             <Explore />
             <Footer />
         </div>

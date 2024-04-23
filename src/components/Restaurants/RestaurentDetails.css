@@ -1,3 +1,16 @@
+#details{
+    background-color: rgba(15, 15, 76, 0.64);
+    color: white;
+
+}
+.card-body{
+   background-color: rgba(15, 15, 76, 0.64);
+    
+}
+.card-body ul li{
+   background-color: rgba(15, 15, 76, 0.64);
+
+}
 .restaurant-img{
     width: 70%;
     border-radius: 20px;

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./CartPage.css"
 import { useSelector, useDispatch } from "react-redux"
 import Navbar from '../Home/Navbar'
@@ -15,10 +17,24 @@ const CartPage = () => {
         dispatch(getCartTotal())
 
     }, [cart])
+    const handleClick = () => {
+        if (cart.length === 0) {
+            return toast.error('Cart is Emty!', {
+
+            });
+
+        } else {
+
+
+            navigate("/payment")
+
+        }
+    }
     return (
         <div>
             <Navbar />
             {/*  */}
+            <ToastContainer />
             <section className="h-100 gradient-custom">
                 <div className="container py-5">
                     <div className="row d-flex justify-content-center my-4">
@@ -27,6 +43,7 @@ const CartPage = () => {
                                 <div className="card-header py-3">
                                     <h5 className="mb-0">Cart - {cart.length} items</h5>
                                 </div>
+                                <Link className='cartLink' to="/cartzila"><h3> <i class="fa-solid fa-arrow-left"></i>Back to Order</h3></Link>
                                 <div className="card-body">
 
 
@@ -114,7 +131,7 @@ const CartPage = () => {
                                         </li>
                                     </ul>
 
-                                    <button type="button" className="btn btn-warning btn-lg btn-block fw-bold" onClick={() => navigate("/payment")}>
+                                    <button type="button" className="btn btn-warning btn-lg btn-block fw-bold" onClick={handleClick}>
                                         Place Order
                                     </button>
                                 </div>

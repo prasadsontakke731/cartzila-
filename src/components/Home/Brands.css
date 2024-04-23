@@ -8,6 +8,11 @@
     margin-bottom: 10px;
     
 }
+#carouselExampleDark1{
+     /* background-color: rgba(16, 16, 152, 0.713); */
+
+}
+
 .img-div{
     height: 150px;
     width: 150px;
@@ -22,7 +27,7 @@
 .carousel{
     position: relative;
     padding-top: 10px;
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(75, 168, 255);
  
 }
 .pre-brand-btn{

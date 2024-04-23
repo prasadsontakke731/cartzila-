@@ -29,7 +29,7 @@ const RestaurentDetails = () => {
     // 
 
     return (
-        <div>
+        <div id='details'>
 
             <div className=''>
                 <Navbar />

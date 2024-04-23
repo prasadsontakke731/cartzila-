@@ -1,16 +1,19 @@
 import React from 'react'
 import "./Carousal.css"
-
+import { useSelector, useDispatch } from "react-redux"
 import { carousalImg } from '../../utils/constants'
+import lang from '../../utils/languageConstants'
 const Carousal = () => {
+    const dispatch = useDispatch()
+    const langKey = useSelector(store => store.config.lang)
     const sliceCarousalImg1 = carousalImg.slice(0, 5)
     const sliceCarousalImg2 = carousalImg.slice(5, 10)
     const sliceCarousalImg3 = carousalImg.slice(10, 15)
 
     return (
 
-        <div id="carouselExampleDark" className="carousel carousel-dark slide mt-5 w-75 ms-auto me-auto" data-bs-ride="carousel">
-            <h5 className='restaurants text-center'>Inspiration for your first order</h5>
+        <div id="carouselExampleDark" className="carousel  slide mt-5 w-75 ms-auto me-auto" data-bs-ride="carousel">
+            <h5 className='restaurants text-white text-center'>{lang[langKey].firstCarousal}</h5>
 
             <div className="carousel-inner ">
 
@@ -79,7 +82,7 @@ const Carousal = () => {
 
                 </div>
             </div>
-            <button className="pre-btn carousel-control-prev " type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <button className="pre-btn carousel-control-prev text-white fw-bold" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
             </button>

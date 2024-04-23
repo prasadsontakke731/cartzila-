@@ -80,9 +80,9 @@ const Login = () => {
     }
     return (
 
-        <form onSubmit={(e) => e.preventDefault()} className='page'>
+        <form onSubmit={(e) => e.preventDefault()} className='page '>
             <div className='cover'>
-                <h1 className='font-bold text-3xl py-4'>{!isSignInForm ? "Sign Up" : "Sign In"}</h1>
+                <h1 className='text-primary font-bold text-3xl py-4'>{!isSignInForm ? "Sign Up" : "Sign In"}</h1>
                 {
                     !isSignInForm && <input type="text" placeholder='Name' />
                 }
@@ -90,7 +90,7 @@ const Login = () => {
                 <input type="password" ref={password} placeholder='e.g Prasad@1302' />
                 <p className='text-danger fw-bold me-auto ms-5'>{errorMessage}</p>
                 <button className="login-btn" onClick={handleButtonClick}>{!isSignInForm ? "Sign Up" : "Sign In"}</button>
-                <p className='py-4' onClick={toggleSignInForm}>
+                <p className='py-4 pointer-event text-primary' onClick={toggleSignInForm}>
                     {!isSignInForm ? "Already Registered Sign In now..." : "New To CartZilla? Sign up Now"}
                 </p>
 

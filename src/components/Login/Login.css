@@ -1,3 +1,6 @@
+.page{
+    background-color: rgba(16, 16, 140, 0.503);
+}
 .cover{
     position: relative;
     background-color: white;
@@ -79,4 +82,9 @@ input:focus{
     bottom: 0;
     transform: scale(1);
     transform: 1.5s;
+}
+.pointer-event{
+    cursor: pointer;
+    font-weight: bold;
+    word-spacing: 2px;
 }

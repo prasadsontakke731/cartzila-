@@ -1,14 +1,19 @@
 import React from 'react'
+import { useSelector, useDispatch } from "react-redux"
 import "./Explore.css"
+import lang from '../../utils/languageConstants'
 const Explore = () => {
+    const dispatch = useDispatch()
+
+    const langKey = useSelector(store => store.config.lang)
     return (
-        <div className='container my-3'>
+        <div className='container explore my-3'>
             <div className="accordion" id="accordionExample">
-                <h5 className='text-center restaurants mb-2'>Explore options near me</h5>
-                <div className="accordion-item">
+                <h5 className='text-center restaurants mb-2'>{lang[langKey].explore}</h5>
+                <div className="accordion-item" id='accordion-item'>
                     <h2 className="accordion-header" id="headingOne">
                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Popular cuisines near me
+                            {lang[langKey].firstExplore}
                         </button>
                     </h2>
                     <div id="collapseOne" className="accordion-collapse collapse show " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -20,7 +25,7 @@ const Explore = () => {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingTwo">
                         <button className="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Popular restaurant types near me
+                            {lang[langKey].secondExplore}
                         </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -32,7 +37,7 @@ const Explore = () => {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
                         <button className="accordion-button collapsed  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Top Restaurant Chains
+                            {lang[langKey].thirdExplore}
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -51,7 +56,7 @@ const Explore = () => {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
                         <button className="accordion-button collapsed  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Cities We Deliver To
+                            {lang[langKey].fourthExplore}
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">

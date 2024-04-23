@@ -6,6 +6,14 @@
     list-style-type: none;
     font-size: 25px;
 }
+#accordion-item{
+    background-color: rgba(16, 16, 152, 0.713);
+}
+.accordion-button{
+background-color: rgba(16, 16, 152, 0.713);
+color: white;
+font-weight: bold;
+}
 .rest-chain li{
     cursor: pointer;
     color: rgb(178, 180, 182);

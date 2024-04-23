@@ -2,7 +2,7 @@ import React from 'react'
 import "./Address.css"
 const Address = () => {
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" id='address'>
             <div className="row justify-content-center">
                 <div className="col-md-6">
                     <h2 className="text-center mb-4">Delivery Address</h2>
