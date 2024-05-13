@@ -1,39 +1,42 @@
 import React from 'react'
-import Navbar from './Home/Navbar'
-import Carousal from './Home/Carousal'
-import Brands from './Home/Brands'
-import Footer from './Footer'
-import RestaurentList from './Home/RestaurentList'
-import Explore from './Home/Explore'
-import ScrollToTopOnMount from './ScrollToTopOnMount'
+const LazyScrollToTopOnMount = React.lazy(() => import("./ScrollToTopOnMount"))
+const LazyNavbar = React.lazy(() => import("./Home/Navbar"))
+const LazyCarousal = React.lazy(() => import("./Home/Carousal"))
+const LazyBrands = React.lazy(() => import("./Home/Brands"))
+const LazyRestaurentList = React.lazy(() => import("./Home/RestaurentList"))
+const LazyExplore = React.lazy(() => import("./Home/Explore"))
+const LazyFooter = React.lazy(() => import("./Footer"))
 
 const Browse = () => {
-    const handleClick = () => {
-        const carousalSection = document.getElementById('restList');
-        carousalSection.scrollIntoView({ behavior: 'smooth' });
-        const brandSection = document.getElementById('restList');
-        brandSection.scrollIntoView({ behavior: 'smooth' });
-
-
-    }
-
     return (
-
         <div style={{ backgroundColor: "rgba(15, 15, 76, 0.64)" }}>
-            <ScrollToTopOnMount />
-            <Navbar />
+            <React.Suspense>
+                <LazyScrollToTopOnMount />
+            </React.Suspense>
+            <React.Suspense>
+                <LazyNavbar />
+            </React.Suspense>
             <div id='car' >
-                <Carousal />
+                <React.Suspense>
+                    <LazyCarousal />
+                </React.Suspense>
             </div>
             <div >
-
-                <Brands />
+                <React.Suspense>
+                    <LazyBrands />
+                </React.Suspense>
             </div>
             <div id='restList' >
-                <RestaurentList />
+                <React.Suspense>
+                    <LazyRestaurentList />
+                </React.Suspense>
             </div>
-            <Explore />
-            <Footer />
+            <React.Suspense>
+                <LazyExplore />
+            </React.Suspense>
+            <React.Suspense>
+                <LazyFooter />
+            </React.Suspense>
         </div>
     )
 }

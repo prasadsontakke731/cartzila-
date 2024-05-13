@@ -1,13 +1,10 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import "./RestaurentList.css"
 import { Fooddata } from '../../utils/constants'
 import lang from '../../utils/languageConstants'
 const RestaurentList = () => {
-
-
-    const dispatch = useDispatch()
     const navigate = useNavigate()
     const langKey = useSelector(store => store.config.lang)
 

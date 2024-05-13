@@ -12,9 +12,15 @@
     cursor: pointer;
     transition: all 1s ease-in-out;
     background-color: rgba(15, 15, 76, 0.64);
+  
 }
 .cards:hover{
 transform: scale(0.9);
+}
+.card-body{
+    /* background-color: #fff; */
+    background-color: rgba(59, 59, 108, 0.64);
+
 }
 .rating{
     /* background-color: goldenrod; */

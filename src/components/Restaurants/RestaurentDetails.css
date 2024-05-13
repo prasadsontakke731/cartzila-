@@ -9,6 +9,7 @@
 }
 .card-body ul li{
    background-color: rgba(15, 15, 76, 0.64);
+   font-weight: normal;
 
 }
 .restaurant-img{

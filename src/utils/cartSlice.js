@@ -50,22 +50,30 @@ const cartSlice = createSlice({
             state.cart = []
         },
         increaseItemQuantity: (state, action) => {
-            state.cart = state.cart.map((item) => {
-                if (item.id === action.payload) {
-                    return { ...item, quantity: item.quantity + 1 }
-                } else {
-                    return item
-                }
-            })
+            if (state.items.length > 0) {
+                state.cart = state.cart.map((item) => {
+                    if (item.id === action.payload) {
+                        return { ...item, quantity: item.quantity + 1 }
+                    } else {
+                        return item
+                    }
+                })
+            } else {
+                state.items = 0
+            }
         },
         decreaseItemQuantity: (state, action) => {
-            state.cart = state.cart.map((item) => {
-                if (item.id === action.payload) {
-                    return { ...item, quantity: item.quantity - 1 }
-                } else {
-                    return item
-                }
-            })
+            if (state.items.length > 0) {
+                state.cart = state.cart.map((item) => {
+                    if (item.id === action.payload) {
+                        return { ...item, quantity: item.quantity - 1 }
+                    } else {
+                        return item
+                    }
+                })
+            } else {
+                state.cart = []
+            }
         }
     }
 })

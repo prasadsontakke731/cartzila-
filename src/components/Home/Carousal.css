@@ -1,6 +1,5 @@
 
 .carousel-item div img{
-    /* border: 10px solid gray; */
     box-shadow: 5px 5px 10px gray;
     border-radius: 50%;
     height: 150px;
@@ -22,7 +21,6 @@
 .carousel{
     position: relative;
     padding-top: 10px;
-    /* background-color: rgb(244, 244, 244); */
       color: rgba(16, 16, 152, 0.713);
  
 }
@@ -36,9 +34,7 @@
 }
 .nxt-btn{
     position: absolute;
-  
      top: 120px;
-
     width: 30px;
     height: 40px;
    

@@ -1,15 +1,13 @@
 import React from 'react'
 import "./Carousal.css"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import { carousalImg } from '../../utils/constants'
 import lang from '../../utils/languageConstants'
 const Carousal = () => {
-    const dispatch = useDispatch()
     const langKey = useSelector(store => store.config.lang)
     const sliceCarousalImg1 = carousalImg.slice(0, 5)
     const sliceCarousalImg2 = carousalImg.slice(5, 10)
     const sliceCarousalImg3 = carousalImg.slice(10, 15)
-
     return (
 
         <div id="carouselExampleDark" className="carousel  slide mt-5 w-75 ms-auto me-auto" data-bs-ride="carousel">
@@ -33,9 +31,6 @@ const Carousal = () => {
                                 )
                             })
                         }
-
-
-
                     </div>
 
                 </div>

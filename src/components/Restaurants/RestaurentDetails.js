@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import "./RestaurentDetails.css"
 import Navbar from '../Home/Navbar'
 import Footer from '../Footer'
-import { addToCart, removeItem } from '../../utils/cartSlice'
+import { addToCart } from '../../utils/cartSlice'
 
 const RestaurentDetails = () => {
 
@@ -47,7 +47,7 @@ const RestaurentDetails = () => {
                                     <h5 className="card-title  fw-bold bg-success p-1 text-white rounded rounded-5 pointer-event text-center">{data.rname}</h5>
                                     <p className="card-text mt-3 fw-bold">{data.info}</p>
                                     <ul className="list-group list-group-flush mt-3">
-                                        <li className="list-group-item">{data.price} <span>Rs.</span></li>
+                                        <li className="list-group-item text-white">{data.price} <span>Rs.</span></li>
                                         <li className="list-group-item text-white fw-bold bg-danger">{data.somedata}</li>
                                         <li className="list-group-item mt-3"><span className='bg-success text-white p-2 rounded rounded-4 '>{data.rating}</span></li>
                                     </ul>

@@ -112,15 +112,15 @@ const CartPage = () => {
                                     <h5 className="mb-0">Summary</h5>
                                 </div>
                                 <div className="card-body">
-                                    <ul className="list-group list-group-flush">
+                                    <ul className="list-group ul list-group-flush ">
                                         <li
-                                            className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                            className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0 text-white">
                                             Total Foods Order
                                             <span className='fw-bold'>{totalQuantity}</span>
                                         </li>
 
                                         <li
-                                            className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                            className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3 text-white">
                                             <div>
                                                 <strong>Total amount</strong>
                                                 <strong>

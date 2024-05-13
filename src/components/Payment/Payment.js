@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import { useSelector, useDispatch } from "react-redux"
 import "./Payment.css"
-import Navbar from '../Home/Navbar'
-import Footer from '../Footer'
 import { getCartTotal, removerAllItems } from '../../utils/cartSlice'
-
+const LazyNavbar = React.lazy(() => import("../Home/Navbar"))
+const LazyFooter = React.lazy(() => import("../Footer"))
 const Payment = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -104,7 +102,9 @@ const Payment = () => {
     return (
         <div>
             <ToastContainer />
-            <Navbar />
+            <React.Suspense>
+                <LazyNavbar />
+            </React.Suspense>
             <div className="container-fluid payments">
                 <div className="row">
                     <div className="col-md-6">
@@ -188,7 +188,9 @@ const Payment = () => {
             </div>
 
 
-            <Footer />
+            <React.Suspense>
+                <LazyFooter />
+            </React.Suspense>
         </div>
     )
 }

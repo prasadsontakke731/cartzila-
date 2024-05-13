@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
-import Login from './Login/Login'
-import Browse from './Browse'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../utils/firebase'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { addUser, removeUser } from '../utils/userSlice'
-import CartPage from './Cart/CartPage'
-import Navbar from './Home/Navbar'
-import RestaurentDetails from './Restaurants/RestaurentDetails'
-import Payment from './Payment/Payment'
-import PaymentSuccessFull from './Payment/PaymentSuccessFull'
-import ScrollToTopOnMount from './ScrollToTopOnMount'
+const LazyLogin = React.lazy(() => import("./Login/Login"))
+const LazyBrowse = React.lazy(() => import("./Browse"))
+const LazyCartPage = React.lazy(() => import("./Cart/CartPage"))
+const LazyPayment = React.lazy(() => import("./Payment/Payment"))
+const LazyScrollToTopOnMount = React.lazy(() => import("./ScrollToTopOnMount"))
+const LazyPaymentSuccessFull = React.lazy(() => import("./Payment/PaymentSuccessFull"))
+const LazyRestaurentDetails = React.lazy(() => import("./Restaurants/RestaurentDetails"))
+
 
 const Body = () => {
     const dispatch = useDispatch()
@@ -19,30 +19,43 @@ const Body = () => {
     const appRouter = createBrowserRouter([
         {
             path: "/",
-            element: <Login />
+            element:
+                <React.Suspense>
+                    <LazyLogin />
+                </React.Suspense>
         },
         {
             path: "cartzila",
-            element: <Browse />,
+            element: <React.Suspense>
+                <LazyBrowse />
+            </React.Suspense>,
 
         },
         {
 
             path: "cart",
-            element: <CartPage />
+            element: <React.Suspense>
+                <LazyCartPage />
+            </React.Suspense>
 
         },
         {
             path: "restaurent/:id/:name",
-            element: <RestaurentDetails />
+            element: <React.Suspense>
+                <LazyRestaurentDetails />
+            </React.Suspense>
         },
         {
             path: "payment",
-            element: <Payment />
+            element: <React.Suspense>
+                <LazyPayment />
+            </React.Suspense>
         },
         {
             path: "order-success",
-            element: <PaymentSuccessFull />
+            element: <React.Suspense>
+                <LazyPaymentSuccessFull />
+            </React.Suspense>
         }
     ])
 
@@ -65,7 +78,9 @@ const Body = () => {
     }, [])
     return (
         <div>
-            <ScrollToTopOnMount />
+            <React.Suspense>
+                <LazyScrollToTopOnMount />
+            </React.Suspense>
             <RouterProvider router={appRouter} />
         </div>
     )

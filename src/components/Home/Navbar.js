@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link, useNavigate, Outlet } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./Navbar.css"
 import { signOut } from 'firebase/auth';
 import { auth } from '../../utils/firebase';
@@ -9,10 +9,7 @@ import lang from '../../utils/languageConstants';
 import { SUPPORTED_LANGUAGES } from '../../utils/constants';
 import { changeLanguage } from '../../utils/configSlice';
 const Navbar = () => {
-
-    // 
-    const { cart, totalQuantity } = useSelector(store => store.allCart)
-
+    const { cart } = useSelector(store => store.allCart)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const langKey = useSelector(store => store.config.lang)
@@ -20,7 +17,7 @@ const Navbar = () => {
     useEffect(() => {
         dispatch(getCartTotal())
     }, [cart])
-    // 
+
 
 
     const handleSignOut = () => {
@@ -42,7 +39,6 @@ const Navbar = () => {
         dispatch(changeLanguage(e.target.value))
     }
     return (
-
         <>
             <nav className="navbar navbars navbar-expand-lg ">
                 <div className="container-fluid">
@@ -53,22 +49,10 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                {/* <div className="dropdown">
-                                    <button className="language" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {lang.hindi.language}
-                                    </button>
-                                    <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-                                        <li className='text-center m-1 w-auto border border-black py-1 '>मराठी</li>
-                                        <li className='text-center m-1 w-auto border border-black py-1 '>हिंदी</li>
-                                        <li className='text-center m-1 w-auto border border-black py-1 '>English</li>
-                                    </ul>
-                                </div> */}
                                 <select className='select' onChange={handleLanguageChange}>
                                     {
                                         SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)
                                     }
-
-
                                 </select>
                             </li>
                             <li className="nav-item">
@@ -79,14 +63,11 @@ const Navbar = () => {
                                 <i className="fa-solid fa-cart-plus fs-4 text-white">
                                     <span className='text-white ms-1'>{cart.length}</span>
                                 </i>
-
                             </li>
-
                         </ul>
                     </div>
                 </div>
             </nav>
-
         </>
 
     )

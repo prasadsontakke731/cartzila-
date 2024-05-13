@@ -1,11 +1,9 @@
 import React from 'react'
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import "./Footer.css"
 import appSToreImg from "../Assets/appStore.png"
 import lang from '../utils/languageConstants'
 const Footer = () => {
-    const dispatch = useDispatch()
-
     const langKey = useSelector(store => store.config.lang)
     return (
         <footer className='container-fluid border border-3'>

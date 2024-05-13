@@ -1,10 +1,8 @@
 import React from 'react'
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import "./Explore.css"
 import lang from '../../utils/languageConstants'
 const Explore = () => {
-    const dispatch = useDispatch()
-
     const langKey = useSelector(store => store.config.lang)
     return (
         <div className='container explore my-3'>

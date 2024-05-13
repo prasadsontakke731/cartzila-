@@ -89,7 +89,7 @@ const Login = () => {
                 <input type="email" ref={email} placeholder='prasad@gmail.com' />
                 <input type="password" ref={password} placeholder='e.g Prasad@1302' />
                 <p className='text-danger fw-bold me-auto ms-5'>{errorMessage}</p>
-                <button className="login-btn" onClick={handleButtonClick}>{!isSignInForm ? "Sign Up" : "Sign In"}</button>
+                <button className="login-btn " onClick={handleButtonClick}>{!isSignInForm ? "Sign Up" : "Sign In"}</button>
                 <p className='py-4 pointer-event text-primary' onClick={toggleSignInForm}>
                     {!isSignInForm ? "Already Registered Sign In now..." : "New To CartZilla? Sign up Now"}
                 </p>
